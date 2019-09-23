@@ -1,1 +1,108 @@
-import React from 'react'
+import React from 'react';
+import { withFormik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+
+function SignUp({touched, errors}){
+
+
+    return(
+        <div>
+            
+            <h1>Sign Up</h1>
+
+            <Form>
+
+                <div>
+                    <label>Username</label>
+                    <Field 
+                        name="username" 
+                        type="username"
+                        autoComplete="off"
+                    />
+                    <br/>
+                    <h3>{touched.username && errors.username}</h3>
+                </div>
+
+
+                <div>
+                    <label>Full Name</label>
+                    <Field 
+                        name="full_name" 
+                        type="text"
+                        autoComplete="off"
+                    />
+                    <br/>
+                    <h3>{touched.full_name && errors.full_name}</h3>
+                </div>
+
+
+                <div>
+                    <label>Email</label>
+                    <Field 
+                        name="email" 
+                        type="email"
+                        autoComplete="off"
+                    />
+                    <br/>
+                    <h3>{touched.email && errors.email}</h3>
+                </div>
+
+
+                <div>
+                    <label>Password</label>
+                    <Field 
+                        name="password" 
+                        type="password"
+                        autoComplete="off"
+                    />
+                    <br/>
+                    <h3>{touched.password && errors.password}</h3>
+                </div>
+
+                <button type="submit" >Submit &rarr;</button>
+            </Form>
+
+        </div>
+    )
+}
+
+
+export default withFormik({
+
+    mapPropsToValues(){
+        return{
+            username:'',
+            email:'',
+            password:''
+        };
+    },
+
+    validationSchema: Yup.object().shape({
+        username: Yup.string()
+            .min(3)
+            .required(),
+        full_name: Yup.string()
+            .min(3)
+            .required(),
+        email: Yup.string()
+            .email()
+            .required(),
+        password: Yup.string()
+            .min(6)
+            .required()
+        }),
+
+    handleSubmit(values, formikBag){
+
+        const url = 'http://localhost:3000/'
+
+        axios
+            .post(url, values)
+            .then(res => {
+                formikBag.props.history.push('/profile')
+            })
+            .catch(e => { console.log(e) });
+    }
+
+})(SignUp)
