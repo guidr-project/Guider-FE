@@ -11,7 +11,6 @@ import TripCard from "./components/ProfileCards/TripCard";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
 
         <Route exact path='/' component={Links} />
 
@@ -19,9 +18,7 @@ function App() {
 
         <Route exact path='/profile' component={Profile} />
 
-        Hello There
-      </header>
-      <TripCard/>
+        <Route exact path='/form' component={TripCard} />
     </div>
   );
 }
