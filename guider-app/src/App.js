@@ -6,6 +6,7 @@ import { Profile } from './components/ProfileCards/Profile'
 import Links from './components/loginInfo/Links'
 
 import './App.css';
+import TripCard from "./components/ProfileCards/TripCard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
         Hello There
       </header>
+      <TripCard/>
     </div>
   );
 }
