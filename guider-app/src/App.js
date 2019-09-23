@@ -4,26 +4,21 @@ import { Route, Redirect} from "react-router-dom";
 import SignUp from './components/loginInfo/SignUp'
 import { Profile } from './components/ProfileCards/Profile'
 import Links from './components/loginInfo/Links'
+import TripCard from './components/ProfileCards/TripCard'
+import Header from "./components/ProfileCards/Header.js";
+import TabNav from "./components/ProfileCards/TabNav.js";
 
 import './App.css';
 
-import Header from "./components/ProfileCards/Header.js";
-import TabNav from "./components/ProfileCards/TabNav.js";
-import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      <Router>
-        <Header />
-        <TabNav />
-      </Router>
-
-import TripCard from "./components/ProfileCards/TripCard";
 
 function App() {
   return (
     <div className="App">
+
+        <Route exact path='/' component={Header} />
+
+        <Route exact path='/' component={TabNav} />
 
         <Route exact path='/' component={Links} />
 
