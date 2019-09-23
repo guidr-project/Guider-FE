@@ -11,10 +11,10 @@ const createLabel = (iconName, labelText) => (
   </span>
 );
 
-const welcomeLabel = createLabel("home", "Projects");
-const characterLabel = createLabel("users", "FAQs");
+const welcomeLabel = createLabel("compass", "Projects");
+const characterLabel = createLabel("globe", "FAQs");
 const locationLabel = createLabel("map", "About");
-const episodeLabel = createLabel("angle right icon", "Sign in");
+const episodeLabel = createLabel("hand point right outline", "Sign in");
 
 const panes = [
   {
