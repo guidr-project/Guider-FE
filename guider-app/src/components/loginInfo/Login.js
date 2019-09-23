@@ -3,27 +3,25 @@ import { Formik, Form, Field, withFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 
-const Login = ({ values }) => {
+const Login = ({ values, errors, touched }) => {
     return (
         <div>
             <Form>
                 <label>
                     Username: 
-                    <Field 
-                        type="text" 
-                        name="username" 
-                        placeholder="Username"
-                    />
+                    <Field type="text" name="username" placeholder="Username" />
+                    {touched.username && errors.username && (
+                        <p>{errors.username}</p>
+                    )}
                 </label>
                 <label>
                     Password: 
-                    <Field 
-                        type="password" 
-                        name="password" 
-                        placeholder="password" 
-                    />
+                    <Field type="password" name="password" placeholder="password" />
+                    {touched.password && errors.password && (
+                        <p>{errors.password}</p>
+                    )}
                 </label>
-                <button>Log In</button>
+                <button type="submit">Log In</button>
             </Form>
         </div>
     )
@@ -42,6 +40,7 @@ const FormikLoginForm = withFormik({
     }),
     handleSubmit(values) {
         console.log(values)
+        // axios post request HERE <--------------
     }
 })(Login)
 
