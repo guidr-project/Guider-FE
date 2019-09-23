@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field, withFormik } from 'formik'
 import * as Yup from 'yup'
-import axios from 'axios'
+
 
 const Login = ({ values, errors, touched }) => {
     return (
         <div>
             <Form>
-                <label>
-                    Username: 
-                    <Field type="text" name="username" placeholder="Username" />
-                    {touched.username && errors.username && (
-                        <p>{errors.username}</p>
-                    )}
-                </label>
+                <div >
+                    <label>
+                        Username: 
+                        <Field type="text" name="username" placeholder="Username" />
+                        {touched.username && errors.username && (
+                            <p>{errors.username}</p>
+                        )}
+                    </label>
+                </div>
                 <label>
                     Password: 
                     <Field type="password" name="password" placeholder="password" />
