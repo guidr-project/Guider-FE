@@ -6,6 +6,19 @@ import { Profile } from './components/ProfileCards/Profile'
 import Links from './components/loginInfo/Links'
 
 import './App.css';
+
+import Header from "./components/ProfileCards/Header.js";
+import TabNav from "./components/ProfileCards/TabNav.js";
+import { BrowserRouter as Router } from "react-router-dom";
+
+function App() {
+  return (
+    <div>
+      <Router>
+        <Header />
+        <TabNav />
+      </Router>
+
 import TripCard from "./components/ProfileCards/TripCard";
 
 function App() {
@@ -19,6 +32,7 @@ function App() {
         <Route exact path='/profile' component={Profile} />
 
         <Route exact path='/form' component={TripCard} />
+
     </div>
   );
 }
