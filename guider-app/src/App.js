@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import TripCard from "./components/ProfileCards/TripCard";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         Hello There
       </header>
+      <TripCard/>
     </div>
   );
 }
