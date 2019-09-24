@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field, withFormik } from 'formik'
 import * as Yup from 'yup'
-import axios from 'axios'
+
+import 'bulma/css/bulma.css'
+
 
 const Login = ({ values, errors, touched }) => {
     return (
-        <div>
-            <Form>
-                <label>
-                    Username: 
-                    <Field type="text" name="username" placeholder="Username" />
-                    {touched.username && errors.username && (
-                        <p>{errors.username}</p>
-                    )}
-                </label>
-                <label>
-                    Password: 
-                    <Field type="password" name="password" placeholder="password" />
-                    {touched.password && errors.password && (
-                        <p>{errors.password}</p>
-                    )}
-                </label>
-                <button type="submit">Log In</button>
-            </Form>
-        </div>
+        <Form className="field">
+            <Field className="control" type="text" name="username" placeholder="Username"/>
+            {touched.username && errors.username && (
+                <p className="errors">{errors.username}</p>
+            )}
+            <Field className="control" type="password" name="password" placeholder="Password" />
+            {touched.password && errors.password && (
+                <p className="errors">{errors.password}</p>
+            )}
+            <button className="pure-button" type="submit" style={{background: '#096852', color: 'white'}}>Log In</button>
+        </Form>
     )
 }
 
@@ -45,3 +39,18 @@ const FormikLoginForm = withFormik({
 })(Login)
 
 export default FormikLoginForm
+
+{/* <div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="e.g Alex Smith">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control">
+    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+  </div>
+</div> */}
+
