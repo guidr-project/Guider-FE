@@ -18,7 +18,7 @@ const TripCard = ({values, errors, touched, status}) => {
     //tripname, boolean, descr, date/time
     return (
         <div className="trip-container">
-            <img className="mountains" img src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1991&q=80"
+            <img className="mountains" img src="https://images.unsplash.com/photo-1516655855035-d5215bcb5604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
             alt="snowy"/>
 
             <div className="trip-form">

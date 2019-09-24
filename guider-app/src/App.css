@@ -21,6 +21,10 @@
   color: #09d3ac;
 }
 
+.mountains {
+  width: 1800px;
+  height: 877px;
+}
 
 .react-switch-checkbox {
   height: 0;
@@ -71,7 +75,7 @@
   opacity: 0.8;
   position: absolute;
   border: 2px solid black;
-  margin-top: -1000px;
+  margin-top: -700px;
   border-radius: 8px;
 }
 
