@@ -1,10 +1,15 @@
 import React from "react";
+// import { NavLink } from "react-router-dom";
+import TabNav from './TabNav'
 import "semantic-ui-css/semantic.min.css";
 
 export default function Header() {
   return (
-    <header className="ui centered">
-      <h1 className="ui center">GUIDR</h1>
-    </header>
+    <div>
+      <h1>GUIDR</h1>
+
+      <TabNav />
+
+    </div>
   );
 }

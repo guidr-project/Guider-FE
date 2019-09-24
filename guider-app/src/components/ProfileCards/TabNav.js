@@ -11,21 +11,21 @@ const createLabel = (iconName, labelText) => (
   </span>
 );
 
-const welcomeLabel = createLabel("compass", "Projects");
-const characterLabel = createLabel("globe", "FAQs");
-const locationLabel = createLabel("map", "About");
-const episodeLabel = createLabel("hand point right outline", "Sign in");
+const welcomeLabel = createLabel("map", "Create Journey");
+const characterLabel = createLabel("compass", "Your Journeys");
+const locationLabel = createLabel("globe", "All Journeys");
+const episodeLabel = createLabel("thumbs up", "Profile");
 
 const panes = [
   {
-    menuItem: <Menu.Item key="home" as={Nav} to={`/`} content={welcomeLabel} />
+    menuItem: <Menu.Item key="home" as={Nav} to={`/homepage`} content={welcomeLabel} />
   },
   {
     menuItem: (
       <Menu.Item
         key="characters"
         as={Nav}
-        to={`/characters`}
+        to={`/homepage/journey`}
         content={characterLabel}
       />
     )
@@ -35,7 +35,7 @@ const panes = [
       <Menu.Item
         key="locations"
         as={Nav}
-        to={`/locations`}
+        to={`/homepage/alljourneys`}
         content={locationLabel}
       />
     )
@@ -45,7 +45,7 @@ const panes = [
       <Menu.Item
         key="episodes"
         as={Nav}
-        to={`/episodes`}
+        to={`/homepage/profile`}
         content={episodeLabel}
       />
     )
