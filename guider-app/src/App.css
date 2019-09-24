@@ -21,6 +21,7 @@
   color: #09d3ac;
 }
 
+
 .react-switch-checkbox {
   height: 0;
   width: 0;
@@ -64,13 +65,14 @@
 .trip-form {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
   width: 500px;
   margin-left: 650px;
   background-color: #f2efc7;
   opacity: 0.8;
-  position: relative;
+  position: absolute;
   border: 2px solid black;
+  margin-top: -1000px;
+  border-radius: 8px;
 }
 
 .f-name {
@@ -111,4 +113,5 @@
   margin-left: 60px;
   background-color: #9f7e69;
   font-size: 20px;
+  margin-bottom: 10px;
 }

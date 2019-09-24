@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import Switch from "./Switch";
 import { TextArea } from "semantic-ui-react";
 
-
 const TripCard = ({values, errors, touched, status}) => {
     const [trips, setTrips] = useState([]);
     const [value, setValue] = useState(false);
@@ -18,36 +17,41 @@ const TripCard = ({values, errors, touched, status}) => {
 
     //tripname, boolean, descr, date/time
     return (
-        <div className="trip-form">
-            <Form>
-                <div className="f-name">
-                    <label htmlFor="tripName"><h2>Trip Name</h2></label>
-                        <Field className="trip-name" type="text" name="tripName" placeholder="Name of Trip"/>
-                        {touched.tripName && errors.tripName && (
-                            <p className="error">{errors.tripName}</p>
-                        )}
+        <div className="trip-container">
+            <img className="mountains" img src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1991&q=80"
+            alt="snowy"/>
 
-                    <label htmlFor="description"><h2>Give a description of your trip!</h2></label>
-                        <TextArea className="desc" type="note" name="description" placeholder="Description of Trip"/>
-                        {touched.description && errors.description && (
-                            <p className="error">{errors.description}</p>
-                        )}
+            <div className="trip-form">
+                <Form>
+                    <div className="f-name">
+                        <label htmlFor="tripName"><h2>Trip Name</h2></label>
+                            <Field className="trip-name" type="text" name="tripName" placeholder="Name of Trip"/>
+                            {touched.tripName && errors.tripName && (
+                                <p className="error">{errors.tripName}</p>
+                            )}
 
-                    <label htmlFor="date"><h2>Dates?</h2></label>
-                        <Field className="date-name" type="date" name="date" placeholder="Date of Trip"/>
-                        {touched.date && errors.date && (
-                            <p className="error">{errors.description}</p>
-                        )}
-                    
-                    <Switch
-                        isOn={value}
-                        handleToggle={() => setValue(!value)}>
-                    </Switch><label htmlFor="switch"><p>Click to turn the button
-                        on to publicly display your trip!</p></label>
+                        <label htmlFor="description"><h2>Give a description of your trip!</h2></label>
+                            <TextArea className="desc" type="note" name="description" placeholder="Description of Trip"/>
+                            {touched.description && errors.description && (
+                                <p className="error">{errors.description}</p>
+                            )}
 
-                    <button className="tripbutton" type="submit">Upload!</button>
-                </div>
-            </Form>
+                        <label htmlFor="date"><h2>Dates?</h2></label>
+                            <Field className="date-name" type="date" name="date" placeholder="Date of Trip"/>
+                            {touched.date && errors.date && (
+                                <p className="error">{errors.description}</p>
+                            )}
+                        
+                        <Switch
+                            isOn={value}
+                            handleToggle={() => setValue(!value)}>
+                        </Switch><label htmlFor="switch"><p>Click to turn the button
+                            on to publicly display your trip!</p></label>
+
+                        <button className="tripbutton" type="submit">Upload!</button>
+                    </div>
+                </Form>
+            </div>
         </div>
     )
 }
