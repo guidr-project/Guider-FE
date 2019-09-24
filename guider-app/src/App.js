@@ -6,6 +6,9 @@ import { HomePage } from './components/ProfileCards/HomePage'
 import Links from './components/loginInfo/Links'
 import Login from './components/loginInfo/Login'
 
+import UserCard from './components/ProfileCards/UserCard'
+
+
 import './App.css';
 
 
@@ -21,6 +24,8 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
 
         <Route exact path='/homepage' component={HomePage} />
+
+        <Route exact path='/homepage/alljourneys' component={UserCard} />
 
     </div>
   );
