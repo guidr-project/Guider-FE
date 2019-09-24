@@ -154,3 +154,32 @@
   margin-bottom: 10px;
 
 }
+
+/* NavBar */
+.NavBar{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  background-color: #ffeee2;
+}
+
+.guidr{
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: black;
+  padding: .2rem;
+  border-radius: 10%;
+  background-color: #d2bba0;
+  -webkit-box-shadow: 2.5px 1px 2.5px 1px #9f7e69;
+}
+
+
+/* SignUp */
+.signUp{
+  background-color: #d2bba0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

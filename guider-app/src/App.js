@@ -6,9 +6,6 @@ import { HomePage } from './components/ProfileCards/HomePage'
 import Links from './components/loginInfo/Links'
 import Login from './components/loginInfo/Login'
 
-import UserCard from './components/ProfileCards/UserCard'
-
-
 import './App.css';
 
 
@@ -17,19 +14,21 @@ function App() {
   return (
     <div className="App">
 
+      <div>
         <Route exact path='/' component={Links} />
-
         <Route exact path='/login' component={Login} />
-
         <Route exact path='/signup' component={SignUp} />
+      </div>
 
+      <div>
         <Route exact path='/homepage' component={HomePage} />
-
-        <Route exact path='/homepage/alljourneys' component={UserCard} />
+        <Route exact path='/homepage/alljourneys' component={HomePage} />
+        <Route exact path='/homepage/profile' component={HomePage} />
+        <Route exact path='/homepage/journey' component={HomePage} />
+      </div>
 
     </div>
   );
 }
 
 export default App;
-

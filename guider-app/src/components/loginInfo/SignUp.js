@@ -7,15 +7,16 @@ function SignUp({touched, errors}){
 
 
     return(
-        <div>
+        <div className='signUp'>
             
             <h1>Sign Up</h1>
 
-            <Form>
+            <Form className="field">
 
                 <div>
                     <label>Username</label>
                     <Field 
+                        className="control"
                         name="username" 
                         type="username"
                         autoComplete="off"
@@ -28,6 +29,7 @@ function SignUp({touched, errors}){
                 <div>
                     <label>Full Name</label>
                     <Field 
+                        className="control"
                         name="full_name" 
                         type="text"
                         autoComplete="off"
@@ -40,6 +42,7 @@ function SignUp({touched, errors}){
                 <div>
                     <label>Email</label>
                     <Field 
+                        className="control"
                         name="email" 
                         type="email"
                         autoComplete="off"
@@ -52,6 +55,7 @@ function SignUp({touched, errors}){
                 <div>
                     <label>Password</label>
                     <Field 
+                        className="control"
                         name="password" 
                         type="password"
                         autoComplete="off"
@@ -60,7 +64,7 @@ function SignUp({touched, errors}){
                     <h3>{touched.password && errors.password}</h3>
                 </div>
 
-                <button type="submit" >Submit &rarr;</button>
+                <button type="submit" className="pure-button" >Submit &rarr;</button>
             </Form>
 
         </div>
