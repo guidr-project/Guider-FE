@@ -8,6 +8,7 @@ import TripCard from './components/ProfileCards/TripCard'
 import Login from './components/loginInfo/Login'
 import Header from "./components/ProfileCards/Header.js";
 import TabNav from "./components/ProfileCards/TabNav.js";
+import UserCard from "./components/ProfileCards/UserCard";
 
 import './App.css';
 
@@ -31,6 +32,8 @@ function App() {
         <Route exact path='/profile' component={Profile} />
 
         <Route exact path='/form' component={TripCard} />
+
+        <UserCard/>
 
 
     </div>

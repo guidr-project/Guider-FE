@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { withFormik, Form, Field, validateYupSchema, setNestedObjectValues} from "formik";
 import * as Yup from "yup";
 import Switch from "./Switch";
-
+import { TextArea } from "semantic-ui-react";
 
 const TripCard = ({values, errors, touched, status}) => {
     const [trips, setTrips] = useState([]);
@@ -17,28 +17,41 @@ const TripCard = ({values, errors, touched, status}) => {
 
     //tripname, boolean, descr, date/time
     return (
-        <div className="trip-form">
-            <Form>
-                <Field className="f-name" type="text" name="tripName" placeholder="Name of Trip"/>
-                {touched.name && errors.name && (
-                    <p className="error">{errors.name}</p>
-                )}
+        <div className="trip-container">
+            <img className="mountains" img src="https://images.unsplash.com/photo-1516655855035-d5215bcb5604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+            alt="snowy"/>
 
-                <Field className="f-name" type="text" name="description" placeholder="Description of Trip"/>
-                {touched.description && errors.description && (
-                    <p className="error">{errors.description}</p>
-                )}
+            <div className="trip-form">
+                <Form>
+                    <div className="f-name">
+                        <label htmlFor="tripName"><h2>Trip Name</h2></label>
+                            <Field className="trip-name" type="text" name="tripName" placeholder="Name of Trip"/>
+                            {touched.tripName && errors.tripName && (
+                                <p className="error">{errors.tripName}</p>
+                            )}
 
-                <Field className="f-name" type="text" name="date" placeholder="Date of Trip"/>
-                {touched.date && errors.date && (
-                    <p className="error">{errors.description}</p>
-                )}
+                        <label htmlFor="description"><h2>Give a description of your trip!</h2></label>
+                            <TextArea className="desc" type="note" name="description" placeholder="Description of Trip"/>
+                            {touched.description && errors.description && (
+                                <p className="error">{errors.description}</p>
+                            )}
 
-                <Switch
-                    isOn={value}
-                    handleToggle={() => setValue(!value)}>
-                </Switch>
-            </Form>
+                        <label htmlFor="date"><h2>Dates?</h2></label>
+                            <Field className="date-name" type="date" name="date" placeholder="Date of Trip"/>
+                            {touched.date && errors.date && (
+                                <p className="error">{errors.description}</p>
+                            )}
+                        
+                        <Switch
+                            isOn={value}
+                            handleToggle={() => setValue(!value)}>
+                        </Switch><label htmlFor="switch"><p>Click to turn the button
+                            on to publicly display your trip!</p></label>
+
+                        <button className="tripbutton" type="submit">Upload!</button>
+                    </div>
+                </Form>
+            </div>
         </div>
     )
 }
@@ -47,13 +60,11 @@ const FormikTripCard = withFormik({
         return {
             tripName: tripName || "",
             description: description || "",
-            date: date || "",
         }
     },
     validationSchema: Yup.object().shape({
         tripName: Yup.string().required("You must enter a trip name"),
         description: Yup.string().required("You must enter a trip description"),
-        date: Yup.string().required("You must enter a trip date"),
     }),
 })(TripCard);
 export default FormikTripCard;
