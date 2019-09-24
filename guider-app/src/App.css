@@ -6,7 +6,7 @@
   height: 40vmin;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,8 +15,89 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #09d3ac;
+}
+
+.react-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.react-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.react-switch-label .react-switch-button {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 45px;
+  /* transition: 0.2s; */
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 10px;
+}
+
+.trip-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+
+/* login form */
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.field {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.control {
+  border: 2px solid #eeeeee;
+  width: 300px;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+} 
+
+.errors {
+  color: red;
+  margin-bottom: 7px;
+  font-weight: bold;
 }
