@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 145px;
+  margin-left: 170px;
   cursor: pointer;
   width: 50px;
   height: 30px;
@@ -70,13 +70,13 @@
   display: flex;
   justify-content: center;
   width: 500px;
-  margin-left: 650px;
+  margin-left: 550px;
   background-color: #f2efc7;
   opacity: 0.8;
-  position: absolute;
   border: 2px solid black;
   margin-top: -700px;
   border-radius: 8px;
+  padding-top: 10px;
 }
 
 .f-name {
@@ -126,7 +126,7 @@
   text-align: center;
   margin-bottom: 30px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .desc {
@@ -135,12 +135,12 @@
   text-align: center;
   margin-bottom: 30px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .date-name {
-  max-width: 120px;
-  margin-left: 112px;
+  max-width: 160px;
+  margin-left: 120px;
   margin-bottom: 30px;
 }
 
@@ -148,9 +148,24 @@
   width: 200px;
   height: 30px;
   border-radius: 8px;
-  margin-left: 60px;
-  background-color: #9f7e69;
+  margin-left: 100px;
+  background-color: #d2bba0;
   font-size: 20px;
   margin-bottom: 10px;
 
+}
+
+.tripbutton:hover {
+  background-color: #9f7e69;
+}
+
+.ui.card.four.column.wide {
+  margin-top: -840px;
+  max-height: 300px;
+  background-color: rgba(242,239,199, 0.8)
+}
+
+.forest {
+  width: 1800px;
+  height: 877px;
 }
