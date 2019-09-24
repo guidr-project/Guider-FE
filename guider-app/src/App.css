@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 145px;
   cursor: pointer;
   width: 50px;
   height: 30px;
@@ -63,8 +64,51 @@
 .trip-form {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  padding: 70px 0;
-  border: 3px solid green;
+  margin-top: 50px;
+  width: 500px;
+  margin-left: 650px;
+  background-color: #f2efc7;
+  opacity: 0.8;
+  position: relative;
+  border: 2px solid black;
+}
+
+.f-name {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+.trip-name {
+  display: flex;
+  max-width: 300px;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.desc {
+  display: flex;
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.date-name {
+  max-width: 120px;
+  margin-left: 112px;
+  margin-bottom: 30px;
+}
+
+.tripbutton {
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  margin-left: 60px;
+  background-color: #9f7e69;
+  font-size: 20px;
 }
