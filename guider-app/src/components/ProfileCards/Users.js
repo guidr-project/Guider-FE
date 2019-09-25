@@ -11,6 +11,7 @@ export default function Users() {
     .then(response => {
         // const char = response.data;
         setUsers(response.data);
+        console.log(response)
     })
     .catch(error => {
         console.log("Sorry, you've got an error", error)
@@ -30,10 +31,13 @@ export default function Users() {
                     console.log(user)
                     return (
                         <UserCard key={index}
-                        title={user.description}
+                        title={user.title}
+                        description={user.description}
                         startDate={user.start_date}
                         endDate={user.end_date}
-                        type={user.type}/>
+                        type={user.type}
+                        days={user.duration_days}
+                        hours={user.duration_hours}/>
                     )
                 })}
             </div>
