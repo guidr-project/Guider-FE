@@ -99,14 +99,20 @@ export default withFormik({
 
     handleSubmit(values, formikBag){
 
-        const url = 'http://localhost:3000/'
+        const url = 'https://guidr-project.herokuapp.com/users/signUp'
+
+        console.log(values)
 
         axios
             .post(url, values)
-            .then(res => {
-                formikBag.props.history.push('/profile')
+            .then(response => {
+                console.log(response)
+                // localStorage.setItem("token");
+                formikBag.props.history.push("/users/login");
             })
-            .catch(e => { console.log(e) });
+            .catch(e => {
+                console.log(e);
+            });
     }
 
 })(SignUp)

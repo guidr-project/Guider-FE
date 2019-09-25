@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Links() {
   return (
     <div >
-      <Link className="navlink" to='/signup'>Sign Up</Link>
-      <Link className="navlink" to='/login'>Login</Link>
+      <Link className="navlink" to='/users/signUp'>Sign Up</Link>
+      <Link className="navlink" to='/users/login'>Login</Link>
     </div>
   );
 }
