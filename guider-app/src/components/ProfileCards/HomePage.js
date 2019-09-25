@@ -18,7 +18,6 @@ export const HomePage = () => {
                 <Route exact path='/homepage' component={TripCard} />
 
                 <Route exact path='/homepage/alljourneys' component={Users} />
-
             </div>
             
             
