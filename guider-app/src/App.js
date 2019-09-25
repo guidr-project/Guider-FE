@@ -26,7 +26,6 @@ function App() {
         <Route exact path='/homepage/profile' component={HomePage} />
         <Route exact path='/homepage/journey' component={HomePage} />
       </div>
-
     </div>
   );
 }
