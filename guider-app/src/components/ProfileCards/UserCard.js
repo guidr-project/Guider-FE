@@ -10,56 +10,20 @@ function UserCard(props) {
                 <div class="row">
                     <div class="ui card four column wide">
                     <div class="content">
-                        <div class="header">Title</div>
-                        <div class="meta">Date</div>
+                        <div class="header">{props.tripName}</div>
+                        <div class="meta">{props.date}</div>
                         <div class="description">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a erat accumsan, 
-                            egestas mi sit amet, posuere purus. Nulla vitae neque ut ex bibendum iaculis a ut erat. 
-                            Etiam varius hendrerit sodales. Curabitur laoreet nisi mi. Cras volutpat neque urna.
-                            Nullam eu metus non tortor porttitor tincidunt vitae in lacus.
+                            {props.description}
                         </p>
                         </div>
                     </div>
                     <div class="extra content">
-                        <button class="ui blue button">Edit</button>
-                        <button class="ui red button">Delete</button>
-                    </div>
-                    </div>
-                    
-                    <div class="ui card four column wide">
-                    <div class="content">
-                        <div class="header">Title</div>
-                        <div class="meta">Date</div>
                         <div class="description">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a erat accumsan, 
-                            egestas mi sit amet, posuere purus. Nulla vitae neque ut ex bibendum iaculis a ut erat. 
-                            Etiam varius hendrerit sodales. Curabitur laoreet nisi mi. Cras volutpat neque urna.
-                            Nullam eu metus non tortor porttitor tincidunt vitae in lacus.
-                        </p>
+                            <p>
+                                Edited by: 
+                            </p>
                         </div>
-                    </div>
-                    <div class="extra content">
-                        <button class="ui blue button">Edit</button>
-                        <button class="ui red button">Delete</button>
-                    </div>
-                    </div>
-
-                    <div class="ui card four column wide">
-                    <div class="content">
-                        <div class="header">Title</div>
-                        <div class="meta">Date</div>
-                        <div class="description">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a erat accumsan, 
-                            egestas mi sit amet, posuere purus. Nulla vitae neque ut ex bibendum iaculis a ut erat. 
-                            Etiam varius hendrerit sodales. Curabitur laoreet nisi mi. Cras volutpat neque urna.
-                            Nullam eu metus non tortor porttitor tincidunt vitae in lacus.
-                        </p>
-                        </div>
-                    </div>
-                    <div class="extra content">
                         <button class="ui blue button">Edit</button>
                         <button class="ui red button">Delete</button>
                     </div>
