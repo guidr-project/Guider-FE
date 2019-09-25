@@ -194,7 +194,8 @@
 .ui.card.four.column.wide {
   margin-top: -840px;
   max-height: 300px;
-  background-color: rgba(242,239,199, 0.8)
+  background-color: rgba(242,239,199, 0.8);
+  margin-left: 15px;
 }
 
 .forest {
