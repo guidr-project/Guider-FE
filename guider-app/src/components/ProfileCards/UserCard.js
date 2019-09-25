@@ -2,30 +2,27 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 
 function UserCard(props) {
+    console.log(props)
     return (
-        <div class="card-container">
-            <img className="forest" img src="https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="woods"/>
-            <div class="ui grid">
-                <div class="row">
-                    <div class="ui card four column wide">
-                    <div class="content">
-                        <div class="header">{props.tripName}</div>
-                        <div class="meta">{props.date}</div>
-                        <div class="description">
+        <div>
+            
+            <div className="ui grid">
+                <div className="row">
+                    <div className="ui card four column wide">
+                    <div className="content" key={props.id}>
+                        <div className="header">Trip: {props.title}</div>
+                        <div className="meta">Start Date: {props.startDate}</div>
+                        <div className="meta">End Date: {props.endDate}</div>
+                        <div className="description">
                         <p>
                             {props.description}
                         </p>
                         </div>
+                        <div className="meta">{props.type}</div>
                     </div>
-                    <div class="extra content">
-                        <div class="description">
-                            <p>
-                                Edited by: 
-                            </p>
-                        </div>
-                        <button class="ui blue button">Edit</button>
-                        <button class="ui red button">Delete</button>
+                    <div className="extra content">
+                        <button className="ui blue button">Edit</button>
+                        <button className="ui red button">Delete</button>
                     </div>
                     </div>
                 </div>

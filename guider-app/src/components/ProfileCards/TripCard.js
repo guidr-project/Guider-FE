@@ -35,14 +35,26 @@ const TripCard = ({values, errors, touched, status}) => {
                                 <p className="errors">{errors.description}</p>
                             )}
 
-                        <label htmlFor="date"><h2>Dates?</h2></label>
-                            <Field className="date-name" type="date" name="date" placeholder="Date of Trip"/>
+                        <label htmlFor="date"><h2>Start Date</h2></label>
+                            <Field className="date-name" type="date" name="date" placeholder="Start Date"/>
+                            {touched.date && errors.date && (
+                                <p className="errors">{errors.description}</p>
+                            )}
+
+                        <label htmlFor="date"><h2>End Date</h2></label>
+                            <Field className="date-name" type="date" name="date" placeholder="End Date"/>
                             {touched.date && errors.date && (
                                 <p className="errors">{errors.description}</p>
                             )}
 
                         <label htmlFor="userName"><h2>Uploaded by</h2></label>
                             <Field className="trip-name" type="text" name="userName" placeholder="User uploading trip"/>
+                            {touched.userName && errors.userName && (
+                                <p className="errors">{errors.userName}</p>
+                            )}
+
+                        <label htmlFor="userName"><h2>Type of Trip</h2></label>
+                            <Field className="trip-name" type="text" name="userName" placeholder="What kind of trip?"/>
                             {touched.userName && errors.userName && (
                                 <p className="errors">{errors.userName}</p>
                             )}
