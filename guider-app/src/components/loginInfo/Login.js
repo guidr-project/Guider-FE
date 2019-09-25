@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import { Formik, Form, Field, withFormik } from 'formik'
 import * as Yup from 'yup'
+
+
+import { Redirect } from 'react-router-dom'
+import { Formik, Form, Field, withFormik } from 'formik'
+import axios from 'axios'
+
 
 import 'bulma/css/bulma.css'
 
 
 const Login = ({ values, errors, touched }) => {
+    const token = localStorage.getItem("token");
+    
+    if (token) {
+        return <Redirect to="/homepage" />
+    } 
+
     return (
         <Form className="field">
             <Field className="control" type="text" name="username" placeholder="Username"/>
@@ -25,16 +36,25 @@ const FormikLoginForm = withFormik({
     mapPropsToValues({username, password}) {
         return {
             username: username || "",
-            password: password || ""
+            password: password || "",
         }
     },
     validationSchema: Yup.object().shape({
         username: Yup.string().required('Username is required'),
         password: Yup.string().required('Password is required')
     }),
-    handleSubmit(values) {
+    handleSubmit(values, formikBag) {
         console.log(values)
         // axios post request HERE <--------------
+        const url = 'https://guidr-project.herokuapp.com/users/login' 
+        axios
+            .post(url, values)
+            .then(res => {
+                console.log(res.data)
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('id', res.data.id)
+                formikBag.props.history.push('/homepage')
+            })
     }
 })(Login)
 
