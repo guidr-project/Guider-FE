@@ -16,7 +16,7 @@ function App() {
 
       <div>
         <Route exact path='/' component={Links} />
-        <Route exact path='/login' component={Login} />
+        <Route exact path='/users/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
       </div>
 
