@@ -188,18 +188,38 @@
 
 
 .tripbutton:hover {
-  background-color: #9f7e69;
+  background-color: #a0a0a0;
 }
 
-.ui.card.four.column.wide {
-  margin-top: -840px;
-  max-height: 300px;
-  background-color: rgba(242,239,199, 0.8);
-  margin-left: 15px;
+.user-card {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin-left: 20px;
+  background-color: rgba(242,239,199, 0.9);
+  opacity: 0.8;
+  border: 2px solid black;
+  margin-top: -750px;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.basic h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.basic p{
+  margin-bottom: 5px;
 }
 
 .forest {
   width: 1800px;
   height: 877px;
+}
 
+.card-info span {
+  color: blue;
 }
