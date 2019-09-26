@@ -31,12 +31,6 @@ export const YourTrips = props => {
                             days={user.duration_days}
                             hours={user.duration_hours}/>
                         )
-                    } else {
-                        return(
-                            <div>
-                                <h3>Loading...</h3>
-                            </div>
-                        )
                     }
                 })}
             </div>
