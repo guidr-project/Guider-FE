@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import UserCard from "./UserCard";
-
+import "../../Users.css";
 
 import { useContext } from 'react'
 import { JourneyContext } from '../../context/GuidrContext'
@@ -14,8 +14,6 @@ export const YourTrips = props => {
 
     return (
         <div className="card-container">
-            <img className="forest" src="https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="woods"/>
             <div className='testingDiv'>
 
                 {journeys.map(user => { if(user.user_id == localStorage.getItem('id')){
@@ -25,6 +23,7 @@ export const YourTrips = props => {
                             user_id={user.user_id}
                             id={user.id}
                             title={user.title}
+                            name={user.full_name}
                             description={user.description}
                             startDate={user.start_date}
                             endDate={user.end_date}

@@ -105,7 +105,8 @@
 
 
 import React, {useState} from "react";
-import {axiosAuth} from '../utils/axiosAuth'
+import {axiosAuth} from '../utils/axiosAuth';
+
 
 
 
