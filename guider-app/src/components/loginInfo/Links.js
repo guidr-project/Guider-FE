@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function Links() {
   return (
-    <div >
-      <Link className="navlink" to='/users/signUp'>Sign Up</Link>
-      <Link className="navlink" to='/users/login'>Login</Link>
-    </div>
+      <ul class="navbar">
+        <Link className="navlink" to='/users/signUp'>Sign Up</Link>
+        <Link className="navlink" to='/users/login'>Login</Link>
+      </ul>
   );
 }
 

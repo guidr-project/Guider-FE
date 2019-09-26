@@ -201,5 +201,15 @@
 .forest {
   width: 1800px;
   height: 877px;
+}
 
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: 64px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
