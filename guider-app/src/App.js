@@ -8,7 +8,7 @@ import { HomePage } from './components/ProfileCards/HomePage'
 import Links from './components/loginInfo/Links'
 import Login from './components/loginInfo/Login'
 
-import {JourneyContext} from './context/GuidrContext'
+import {JourneyContext, UserContext} from './context/GuidrContext'
 
 import './App.css';
 
@@ -17,6 +17,7 @@ import './App.css';
 function App() {
 
   const [journeys, setJourneys] = useState([])
+  const [user, setUser] = useState([])
 
 
   const getJourneys = () => {
@@ -29,16 +30,33 @@ function App() {
       .catch(err => console.log(err))
   }
 
+  const getUser = () => {
+    const userID = localStorage.getItem('id')
+    axiosAuth().get(`https://guidr-project.herokuapp.com/users/${userID}/profile`)
+      .then(res => {
+        setUser(res.data[0])
+      })
+      .catch(err => console.log(err))
+  }
+
   useEffect(() => {
     getJourneys()
+    getUser()
   }, [])
 
-  // console.log(journeys)
+  
+  console.log(journeys)
+
+
+
+
+
 
   return (
     <div className="App">
 
       <JourneyContext.Provider value={{journeys}}>
+        <UserContext.Provider value={{user}} >
 
           <Route exact path='/' component={Links} />
           <Route exact path='/users/login' component={Login} />
@@ -70,7 +88,7 @@ function App() {
             if(!token){
               return <Redirect to='/users/login' />;
             } else {
-              return <HomePage {...props} getJourneys={getJourneys} />
+              return <HomePage {...props} getUser={getUser} />
             }
           }} />
 
@@ -83,7 +101,7 @@ function App() {
               return <HomePage {...props} getJourneys={getJourneys} />
             }
           }} />
-        
+        </UserContext.Provider>
       </JourneyContext.Provider>
     </div>
   );

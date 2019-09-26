@@ -238,3 +238,19 @@ img.forest {
   justify-content: space-around;
   flex-wrap: wrap;
 } 
+
+
+/* .userInfo{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  float: left;
+  background-color: #f2efc7;
+  opacity: 0.8;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 10px;
+  text-align: center;
+  margin: 3rem auto;
+  padding-bottom: 10px;
+} */
