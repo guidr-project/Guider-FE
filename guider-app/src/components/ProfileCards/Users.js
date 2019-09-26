@@ -18,7 +18,7 @@ export const Users = props => {
             <div className="entry">
 
                 {journeys.map((user, index) => {
-                    // console.log(user)
+                    console.log(user)
                     return (
                         <UserCard key={index}
                         getJourneys={props.getJourneys}
