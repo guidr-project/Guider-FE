@@ -3,10 +3,17 @@ import { Route } from 'react-router-dom'
 
 import Header from './Header'
 import TripCard from './TripCard'
-import Users from './Users'
+import {Users} from './Users'
+
+import { useContext } from 'react'
+import { JourneyContext } from '../../context/GuidrContext'
 
 
-export const HomePage = () => {
+export const HomePage = props => {
+
+    
+    const {journeys} = useContext(JourneyContext)
+    console.log(journeys)
 
     return(
         <div>
@@ -17,7 +24,7 @@ export const HomePage = () => {
             <div>
                 <Route exact path='/homepage' component={TripCard} />
 
-                <Route exact path='/homepage/alljourneys' component={Users} />
+                <Route exact path='/homepage/alljourneys' render={() => <Users {...journeys} getJourneys={props.getJourneys} />} />
             </div>
             
             

@@ -94,5 +94,5 @@ const FormikTripCard = withFormik({
             .catch(TripCard);
     }
 })(TripCard);
-console.log("It works", FormikTripCard);
+// console.log("It works", FormikTripCard);
 export default FormikTripCard;

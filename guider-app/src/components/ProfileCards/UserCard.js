@@ -1,4 +1,5 @@
 import React from "react";
+import { axiosAuth } from '../utils/axiosAuth'
 
 
 function UserCard(props) {
@@ -17,7 +18,13 @@ function UserCard(props) {
                 </div>
                 <div className="extra content">
                     <button className="ui blue button">Edit</button>
-                    <button className="ui red button">Delete</button>
+                    <button className="ui red button" onClick={() => { 
+                        if(props.user_id == localStorage.getItem('id')){
+                        return axiosAuth().delete(`https://guidr-project.herokuapp.com/trips/${props.id}`)
+                              .then(res => props.getJourneys())
+                              .catch(error => console.log(error))
+                            }}
+                        }>Delete</button>
                 </div>
             </div>
         </div>
