@@ -26,6 +26,10 @@
   height: 877px;
 }
 
+.trip-container { 
+  margin: 0 auto;
+}
+
 .react-switch-checkbox {
   height: 0;
   width: 0;
@@ -70,13 +74,14 @@
   display: flex;
   justify-content: center;
   width: 500px;
-  margin-left: 550px;
+  margin: 0 auto;
   background-color: #f2efc7;
   opacity: 0.8;
   border: 2px solid black;
-  margin-top: -750px;
+  margin-top: -800px;
   border-radius: 8px;
   padding-top: 10px;
+  text-align: center;
 }
 
 .f-name {
@@ -126,7 +131,6 @@
   text-align: center;
   margin-bottom: 30px;
   margin-top: 10px;
-  margin-left: 40px;
 }
 
 .desc {
@@ -135,12 +139,11 @@
   text-align: center;
   margin-bottom: 30px;
   margin-top: 10px;
-  margin-left: 40px;
 }
 
 .date-name {
   max-width: 160px;
-  margin-left: 120px;
+  margin-left: 30px;
   margin-bottom: 30px;
 }
 
@@ -148,7 +151,7 @@
   width: 200px;
   height: 30px;
   border-radius: 8px;
-  margin-left: 100px;
+  margin-left: 10px;
   background-color: #d2bba0;
   font-size: 20px;
   margin-bottom: 10px;
@@ -186,7 +189,6 @@
 }
 
 
-
 .tripbutton:hover {
   background-color: #a0a0a0;
 }
@@ -194,15 +196,18 @@
 .user-card {
   display: flex;
   justify-content: center;
-  width: 400px;
-  margin-left: 20px;
-  background-color: rgba(242,239,199, 0.9);
+  width: 500px;
+  float: left;
+  background-color: #f2efc7;
   opacity: 0.8;
   border: 2px solid black;
-  margin-top: -750px;
   border-radius: 8px;
   padding-top: 10px;
-  padding-bottom: 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .basic h2 {
@@ -215,10 +220,15 @@
   margin-bottom: 5px;
 }
 
-.forest {
-  width: 1800px;
-  height: 877px;
+img.forest {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
 }
+
 
 .card-info span {
   color: blue;
