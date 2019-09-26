@@ -9,6 +9,7 @@ function UserCard(props) {
             <div className="basic">
                 <div className="card-info" key={props.id}>
                     <h2>Trip: <span>{props.title}</span></h2>
+                    {props.name}
                     <p>Start Date: <span>{props.startDate}</span></p>
                     <p>End Date: <span>{props.endDate}</span></p>
                     <p><span>{props.description}</span></p>
