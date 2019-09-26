@@ -177,8 +177,8 @@ const TripCard = (props) => {
                         />
 
                         <label>Give a description of your trip!</label> 
-                        <input className="desc"
-                            type="text" 
+                        <textarea className="desc"
+                            type="note"
                             name="description" 
                             value={newEvent.description}
                             onChange={changeHandler} 
