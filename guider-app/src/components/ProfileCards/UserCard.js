@@ -1,33 +1,31 @@
 import React from "react";
-import "semantic-ui-css/semantic.min.css";
+import { axiosAuth } from '../utils/axiosAuth'
+
 
 function UserCard(props) {
+    // console.log(props)
     return (
-        <div class="card-container">
-            <img className="forest" img src="https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="woods"/>
-            <div class="ui grid">
-                <div class="row">
-                    <div class="ui card four column wide">
-                    <div class="content">
-                        <div class="header">{props.tripName}</div>
-                        <div class="meta">{props.date}</div>
-                        <div class="description">
-                        <p>
-                            {props.description}
-                        </p>
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="description">
-                            <p>
-                                Edited by: 
-                            </p>
-                        </div>
-                        <button class="ui blue button">Edit</button>
-                        <button class="ui red button">Delete</button>
-                    </div>
-                    </div>
+        <div className="user-card">
+            <div className="basic">
+                <div className="card-info" key={props.id}>
+                    <h2>Trip: <span>{props.title}</span></h2>
+                    {props.name}
+                    <p>Start Date: <span>{props.startDate}</span></p>
+                    <p>End Date: <span>{props.endDate}</span></p>
+                    <p><span>{props.description}</span></p>
+                    <p><span>{props.type}</span></p>
+                    <p>How many hours? <span>{props.hours}</span></p>
+                    <p>How many days?: <span>{props.days}</span></p>
+                </div>
+                <div className="extra content">
+                    <button className="ui blue button">Edit</button>
+                    <button className="ui red button" onClick={() => { 
+                        if(props.user_id == localStorage.getItem('id')){
+                        return axiosAuth().delete(`https://guidr-project.herokuapp.com/trips/${props.id}`)
+                              .then(res => props.getJourneys())
+                              .catch(error => console.log(error))
+                            }}
+                        } >Delete</button>
                 </div>
             </div>
         </div>
