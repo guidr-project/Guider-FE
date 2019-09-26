@@ -1,11 +1,9 @@
 import React from 'react'
 import * as Yup from 'yup'
 
-
 import { Redirect } from 'react-router-dom'
 import { Form, Field, withFormik } from 'formik'
 import axios from 'axios'
-
 
 import 'bulma/css/bulma.css'
 
@@ -44,8 +42,6 @@ const FormikLoginForm = withFormik({
         password: Yup.string().required('Password is required')
     }),
     handleSubmit(values, formikBag) {
-        console.log(values)
-        // axios post request HERE <--------------
         const url = 'https://guidr-project.herokuapp.com/users/login' 
         axios
             .post(url, values)
