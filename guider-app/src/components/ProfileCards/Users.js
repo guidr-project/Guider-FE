@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect} from 'react'
 import UserCard from "./UserCard";
 
 
@@ -10,15 +10,16 @@ export const Users = props => {
     useEffect(() => {props.getJourneys()}, [])
     const {journeys} = useContext(JourneyContext)
 
+    // console.log(journeys)
 
     return (
         <div className="card-container">
-            <img className="forest" img src="https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+            <img className="forest" src="https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
             alt="woods"/>
-            <div className="entry">
+            <div >
 
                 {journeys.map((user, index) => {
-                    console.log(user)
+                    // console.log(user)
                     return (
                         <UserCard key={index}
                         getJourneys={props.getJourneys}

@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import Header from './Header'
 import TripCard from './TripCard'
 import {Users} from './Users'
+import {YourTrips} from './YourTrips'
 
 import { useContext } from 'react'
 import { JourneyContext } from '../../context/GuidrContext'
@@ -28,6 +29,8 @@ export const HomePage = props => {
 
             <div>
                 <Route exact path='/homepage' render={() => <TripCard {...props} addNewTrip={addNewTrip} getJourneys={props.getJourneys} />} />
+
+                <Route exact path='/homepage/journey' render={() => <YourTrips {...journeys} getJourneys={props.getJourneys} />} />
 
                 <Route exact path='/homepage/alljourneys' render={() => <Users {...journeys} getJourneys={props.getJourneys} />} />
             </div>

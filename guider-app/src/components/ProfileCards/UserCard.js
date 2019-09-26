@@ -24,7 +24,7 @@ function UserCard(props) {
                               .then(res => props.getJourneys())
                               .catch(error => console.log(error))
                             }}
-                        }>Delete</button>
+                        } >Delete</button>
                 </div>
             </div>
         </div>
