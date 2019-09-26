@@ -3,7 +3,7 @@ import { axiosAuth } from '../utils/axiosAuth'
 
 
 function UserCard(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div className="user-card">
             <div className="basic">
