@@ -46,7 +46,7 @@ const FormikLoginForm = withFormik({
     handleSubmit(values, formikBag){
 
         const url = 'https://blooming-anchorage-30017.herokuapp.com/users/login' 
-        console.log(values)
+        // console.log(values)
         axios
             .post(url, values)
             .then(res => {
