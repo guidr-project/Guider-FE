@@ -21,7 +21,7 @@ function UserCard(props) {
                     <button className="ui blue button">Edit</button>
                     <button className="ui red button" onClick={() => { 
                         if(props.user_id == localStorage.getItem('id')){
-                        return axiosAuth().delete(`https://guidr-project.herokuapp.com/trips/${props.id}`)
+                        return axiosAuth().delete(`https://blooming-anchorage-30017.herokuapp.com/trips/${props.id}`)
                               .then(res => props.getJourneys())
                               .catch(error => console.log(error))
                             }}

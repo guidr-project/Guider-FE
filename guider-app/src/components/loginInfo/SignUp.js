@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-function SignUp({touched, errors}){
+function SignUp({touched, errors, handleSubmit}){
 
 
     return(
@@ -11,7 +11,7 @@ function SignUp({touched, errors}){
             
             <h1>Sign Up</h1>
 
-            <Form className="field">
+            <Form className="field" onSubmit = {handleSubmit}>
 
                 <div>
                     <label>Username</label>
@@ -99,19 +99,19 @@ export default withFormik({
 
     handleSubmit(values, formikBag){
 
-        const url = 'https://guidr-project.herokuapp.com/users/signUp'
+        //const url = 'https://guidr-build.herokuapp.com/users/signUp'
 
-        console.log(values)
+        console.log('values',values)
 
-        axios
-            .post(url, values)
+        axios.post('https://blooming-anchorage-30017.herokuapp.com/users/signUp', values)
             .then(response => {
-                console.log(response)
+                console.log('is this posting?')
+                console.log('response',response)
                 // localStorage.setItem("token");
                 formikBag.props.history.push("/users/login");
             })
             .catch(e => {
-                console.log(e);
+                console.log(e.message);
             });
     }
 

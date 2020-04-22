@@ -22,7 +22,7 @@ function App() {
 
   const getJourneys = () => {
     axiosAuth()
-      .get("https://guidr-project.herokuapp.com/trips")
+      .get("https://blooming-anchorage-30017.herokuapp.com/trips")
       .then(response => {
         // console.log(response.data)
         setJourneys(response.data)
@@ -32,7 +32,7 @@ function App() {
 
   const getUser = () => {
     const userID = localStorage.getItem('id')
-    axiosAuth().get(`https://guidr-project.herokuapp.com/users/${userID}/profile`)
+    axiosAuth().get(`https://blooming-anchorage-30017.herokuapp.com/users/${userID}/profile`)
       .then(res => {
         setUser(res.data[0])
       })

@@ -137,7 +137,7 @@ const TripCard = (props) => {
     // console.log(newEvent)
     event.preventDefault();
 
-    axiosAuth().post(`https://guidr-project.herokuapp.com/users/${localStorage.getItem('id')}/trips`, newEvent)
+    axiosAuth().post(`https://blooming-anchorage-30017.herokuapp.com/users/${localStorage.getItem('id')}/trips`, newEvent)
       .then(res => props.history.push('/homepage/alljourneys'))
       .catch(error => console.log(error));
 

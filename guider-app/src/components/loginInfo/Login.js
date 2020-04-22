@@ -8,7 +8,7 @@ import axios from 'axios'
 import 'bulma/css/bulma.css'
 
 
-const Login = ({ values, errors, touched }) => {
+const Login = ({ values, errors, touched, handleSubmit }) => {
     const token = localStorage.getItem("token");
     
     if (token) {
@@ -16,7 +16,7 @@ const Login = ({ values, errors, touched }) => {
     } 
 
     return (
-        <Form className="field">
+        <Form className="field" onSubmit = {handleSubmit}>
             <Field className="control" type="text" name="username" placeholder="Username"/>
             {touched.username && errors.username && (
                 <p className="errors">{errors.username}</p>
@@ -31,6 +31,7 @@ const Login = ({ values, errors, touched }) => {
 }
 
 const FormikLoginForm = withFormik({
+
     mapPropsToValues({username, password}) {
         return {
             username: username || "",
@@ -41,8 +42,11 @@ const FormikLoginForm = withFormik({
         username: Yup.string().required('Username is required'),
         password: Yup.string().required('Password is required')
     }),
-    handleSubmit(values, formikBag) {
-        const url = 'https://guidr-project.herokuapp.com/users/login' 
+
+    handleSubmit(values, formikBag){
+
+        const url = 'https://blooming-anchorage-30017.herokuapp.com/users/login' 
+        console.log(values)
         axios
             .post(url, values)
             .then(res => {
@@ -51,7 +55,11 @@ const FormikLoginForm = withFormik({
                 localStorage.setItem('id', res.data.id)
                 formikBag.props.history.push('/homepage')
             })
+            .catch(e => {
+                console.log(e);
+            });
     }
+    
 })(Login)
 
 export default FormikLoginForm
