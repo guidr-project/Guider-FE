@@ -16,7 +16,7 @@ export const YourTrips = props => {
         <div className="card-container">
             <div className='testingDiv'>
 
-                {journeys.map(user => { if(user.user_id == localStorage.getItem('id')){
+                {journeys.map(user => { if(user.user_id === localStorage.getItem('id')){
                         return (
                             <UserCard key={user.id}
                             getJourneys={props.getJourneys}

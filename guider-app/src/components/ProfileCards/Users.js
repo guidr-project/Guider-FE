@@ -5,9 +5,9 @@ import "../../Users.css";
 import { useContext } from 'react'
 import { JourneyContext } from '../../context/GuidrContext'
 
-export const Users = props => {
+export const Users = ({getJourneys}) => {
 
-    useEffect(() => {props.getJourneys()}, [])
+    useEffect(() => {getJourneys()}, [])
     const {journeys} = useContext(JourneyContext)
 
     // console.log(journeys)
@@ -20,7 +20,7 @@ export const Users = props => {
                     // console.log(user)
                     return (
                         <UserCard key={index}
-                        getJourneys={props.getJourneys}
+                        getJourneys={getJourneys}
                         user_id={user.user_id}
                         id={user.id}
                         title={user.title}
