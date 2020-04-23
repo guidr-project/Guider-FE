@@ -7,8 +7,13 @@ import { JourneyContext } from '../../context/GuidrContext'
 
 export const YourTrips = props => {
 
-    useEffect(() => {props.getJourneys()}, [])
+    useEffect(() => {
+        let j = props.getJourneys()
+        // console.log('j',j)
+
+    }, [])
     const {journeys} = useContext(JourneyContext)
+    console.log('props',props)
 
     // console.log(journeys)
 
@@ -16,7 +21,7 @@ export const YourTrips = props => {
         <div className="card-container">
             <div className='testingDiv'>
 
-                {journeys.map(user => { if(user.user_id === localStorage.getItem('id')){
+                {journeys.map(user => { if(user.user_id == localStorage.getItem('id')){
                         return (
                             <UserCard key={user.id}
                             getJourneys={props.getJourneys}
@@ -29,7 +34,8 @@ export const YourTrips = props => {
                             endDate={user.end_date}
                             type={user.type}
                             days={user.duration_days}
-                            hours={user.duration_hours}/>
+                            hours={user.duration_hours}
+                            edit = {true}/>
                         )
                     }
                 })}

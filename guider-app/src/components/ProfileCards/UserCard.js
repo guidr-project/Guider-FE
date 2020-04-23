@@ -5,20 +5,22 @@ import { axiosAuth } from '../utils/axiosAuth'
 function UserCard(props) {
     // console.log(props)
     return (
-        <div className="user-card">
+        <div className="user-card" style={{ 
+            border: "1px solid #202020",
+            backgroundColor: "white",
+            opacity:'1'}}>
             <div className="basic">
                 <div className="card-info" key={props.id}>
-                    <h2>Trip: <span>{props.title}</span></h2>
+                    <h2>{props.title}</h2>
                     {props.name}
-                    <p>Start Date: <span>{props.startDate}</span></p>
-                    <p>End Date: <span>{props.endDate}</span></p>
-                    <p><span>{props.description}</span></p>
-                    <p><span>{props.type}</span></p>
-                    <p>How many hours? <span>{props.hours}</span></p>
-                    <p>How many days?: <span>{props.days}</span></p>
+                    <p>Start Date: {props.startDate}</p>
+                    <p>End Date: {props.endDate}</p>
+                    <p>{props.description}</p>
+                    <p>{props.type}</p>
+                    <p>Duration: {props.days} days {props.hours} hours.</p>
                 </div>
-                <div className="extra content">
-                    <button className="ui blue button">Edit</button>
+                {props.edit ? <div className="extra content">
+                    <button className="ui blue button" style={{background: '#096852', color: 'white'}}>Edit</button>
                     <button className="ui red button" onClick={() => { 
                         if(props.user_id === localStorage.getItem('id')){
                         return axiosAuth().delete(`https://blooming-anchorage-30017.herokuapp.com/trips/${props.id}`)
@@ -26,7 +28,7 @@ function UserCard(props) {
                               .catch(error => console.log(error))
                             }}
                         } >Delete</button>
-                </div>
+                </div> : ''}
             </div>
         </div>
     )

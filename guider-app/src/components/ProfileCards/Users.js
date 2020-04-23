@@ -30,7 +30,8 @@ export const Users = ({getJourneys}) => {
                         endDate={user.end_date}
                         type={user.type}
                         days={user.duration_days}
-                        hours={user.duration_hours}/>
+                        hours={user.duration_hours}
+                        edit={false}/>
                     )
                 })}
             </div>

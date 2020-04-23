@@ -16,16 +16,32 @@ const Login = ({ values, errors, touched, handleSubmit }) => {
     } 
 
     return (
-        <Form className="field" onSubmit = {handleSubmit}>
+        <Form className="field" onSubmit = {handleSubmit} >
+            
             <h1>Login </h1>
-            <Field className="control" type="text" name="username" placeholder="Username"/>
+
+            <Field 
+            className="control" 
+            type="text" 
+            name="username" 
+            placeholder="Username"
+            />
+
             {touched.username && errors.username && (
                 <p className="errors">{errors.username}</p>
             )}
-            <Field className="control" type="password" name="password" placeholder="Password" />
+
+            <Field 
+            className="control" 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            />
+
             {touched.password && errors.password && (
                 <p className="errors">{errors.password}</p>
             )}
+
             <button className="pure-button" type="submit" style={{background: '#096852', color: 'white'}}>Log In</button>
             <p style ={{paddingTop: "20px"}}>Don't have account? <Link to='/users/signUp'>Sign up</Link></p>
         </Form>
