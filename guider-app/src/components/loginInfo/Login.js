@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Yup from 'yup'
 
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { Form, Field, withFormik } from 'formik'
 import axios from 'axios'
 
@@ -17,6 +17,7 @@ const Login = ({ values, errors, touched, handleSubmit }) => {
 
     return (
         <Form className="field" onSubmit = {handleSubmit}>
+            
             <Field className="control" type="text" name="username" placeholder="Username"/>
             {touched.username && errors.username && (
                 <p className="errors">{errors.username}</p>
@@ -26,6 +27,7 @@ const Login = ({ values, errors, touched, handleSubmit }) => {
                 <p className="errors">{errors.password}</p>
             )}
             <button className="pure-button" type="submit" style={{background: '#096852', color: 'white'}}>Log In</button>
+            <p style ={{paddingTop: "20px"}}>Don't have account? <Link to='/users/signUp'>Sign up</Link></p>
         </Form>
     )
 }
