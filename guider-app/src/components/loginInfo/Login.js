@@ -17,7 +17,7 @@ const Login = ({ values, errors, touched, handleSubmit }) => {
 
     return (
         <Form className="field" onSubmit = {handleSubmit}>
-            
+            <h1>Login </h1>
             <Field className="control" type="text" name="username" placeholder="Username"/>
             {touched.username && errors.username && (
                 <p className="errors">{errors.username}</p>

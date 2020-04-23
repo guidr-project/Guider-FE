@@ -56,8 +56,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   border: 1px solid #202020;
   width: 40%;
   background-color: white;
@@ -155,12 +155,12 @@
 
 
 /* SignUp */
-.signUp{
+/* .signUp{
   background-color: #d2bba0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
+} */
 
 
 .tripbutton:hover {
