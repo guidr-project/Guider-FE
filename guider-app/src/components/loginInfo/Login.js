@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 import { Form, Field, withFormik } from 'formik'
 import axios from 'axios'
 
-import 'bulma/css/bulma.css'
+// import 'bulma/css/bulma.css'
 
 
 const Login = ({ values, errors, touched, handleSubmit }) => {

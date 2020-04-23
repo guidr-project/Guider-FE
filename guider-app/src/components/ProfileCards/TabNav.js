@@ -15,6 +15,12 @@ const welcomeLabel = createLabel("map", "Create Journey");
 const characterLabel = createLabel("compass", "Your Journeys");
 const locationLabel = createLabel("globe", "All Journeys");
 const episodeLabel = createLabel("thumbs up", "Profile");
+const logoutLabel = createLabel("thumbs up", "log Out");
+
+// const logOut = () => {
+//   localStorage.clear()
+//   props.history.push('/')
+// }
 
 const panes = [
   {
@@ -43,13 +49,24 @@ const panes = [
   {
     menuItem: (
       <Menu.Item
-        key="episodes"
+        key="welcome"
         as={Nav}
         to={`/homepage/profile`}
         content={episodeLabel}
       />
     )
-  }
+  },
+  // {
+  //   menuItem: (
+  //     <Menu.Item
+  //       key="logout"
+  //       as={Nav}
+  //       to={`/`}
+  //       content={logoutLabel}
+  //       //onClick = {logOut}
+  //     />
+  //   )
+  // }
 ];
 
 const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />;

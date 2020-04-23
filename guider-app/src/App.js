@@ -59,14 +59,14 @@ function App() {
         <UserContext.Provider value={{user}} >
 
           <Route exact path='/' component={Links} />
-          <Route exact path='/users/login' component={Login} />
+          {/* <Route exact path='/users/login' component={Login} /> */}
           <Route exact path='/users/signUp' component={SignUp} />        
 
         
           <Route exact path='/homepage' render={props => {
             const token = localStorage.getItem("token")
             if(!token){
-              return <Redirect to='/users/login' />;
+              return <Redirect to='/' />;
             } else {
               return <HomePage {...props} getJourneys={getJourneys} />
             }
@@ -76,7 +76,7 @@ function App() {
           <Route exact path='/homepage/alljourneys' render={props => {
             const token = localStorage.getItem("token")
             if(!token){
-              return <Redirect to='/users/login' />;
+              return <Redirect to='/' />;
             } else {
               return <HomePage {...props} getJourneys={getJourneys} />
             }
@@ -86,7 +86,7 @@ function App() {
           <Route exact path='/homepage/profile' render={props => {
             const token = localStorage.getItem("token")
             if(!token){
-              return <Redirect to='/users/login' />;
+              return <Redirect to='/' />;
             } else {
               return <HomePage {...props} getUser={getUser} />
             }
@@ -96,7 +96,7 @@ function App() {
           <Route exact path='/homepage/journey' render={props => {
             const token = localStorage.getItem("token")
             if(!token){
-              return <Redirect to='/users/login' />;
+              return <Redirect to='/' />;
             } else {
               return <HomePage {...props} getJourneys={getJourneys} />
             }

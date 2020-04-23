@@ -51,11 +51,18 @@
 }
 
 .field {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  border: 1px solid #202020;
+  width: 40%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
 }
 
 
@@ -68,6 +75,23 @@
   margin-bottom: 10px;
   /* test */
 } 
+
+@media (max-width: 900px){
+  .field{
+    width: 60%;
+  }
+  .control{
+    width: 50%;
+  }
+}
+@media (max-width: 580px){
+  .field{
+    width: 80%;
+  }
+  .control{
+    width: 80%;
+  }
+}
 
 .errors {
   color: red;

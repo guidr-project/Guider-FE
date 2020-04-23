@@ -1,0 +1,26 @@
+.title{
+    padding-top: 3%;
+    font-size: 120px;
+    /* color: #202020; */
+    -webkit-text-stroke: 1px #202020;
+    color: none;
+    fill-opacity: 0;
+    /* text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000; */
+}
+
+.background {
+    background-image: url('../../Images/gear.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-bottom: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

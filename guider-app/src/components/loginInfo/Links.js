@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Login from './Login.js'
+import './links.css'
 
 function Links() {
   return (
-      <ul class="navbar">
-        <Link className="navlink" to='/users/signUp'>Sign Up</Link>
-        <Link className="navlink" to='/users/login'>Login</Link>
-      </ul>
+    <div className='background'>
+    <h2 className="title">GUIDR</h2>
+    <Login />
+    </div>
   );
 }
 

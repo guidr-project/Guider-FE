@@ -108,7 +108,7 @@ export default withFormik({
                 console.log('is this posting?')
                 console.log('response',response)
                 // localStorage.setItem("token");
-                formikBag.props.history.push("/users/login");
+                formikBag.props.history.push("/");
             })
             .catch(e => {
                 console.log(e.message);
