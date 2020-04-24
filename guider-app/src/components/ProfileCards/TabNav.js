@@ -23,15 +23,20 @@ const logoutLabel = createLabel("thumbs up", "log Out");
 // }
 
 const panes = [
-  {
-    menuItem: <Menu.Item key="home" as={Nav} to={`/homepage`} content={welcomeLabel} />
-  },
+  // {
+  //   menuItem: (
+  //   <Menu.Item key="home" 
+  //   as={Nav} 
+  //   to={`/homepage`} 
+  //   content={welcomeLabel} />
+  //   )
+  // },
   {
     menuItem: (
       <Menu.Item
         key="characters"
         as={Nav}
-        to={`/homepage/journey`}
+        to={`/homepage`}
         content={characterLabel}
       />
     )

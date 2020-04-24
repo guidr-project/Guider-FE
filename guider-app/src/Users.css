@@ -1,8 +1,9 @@
 .card-container {
-    background-image: url("../src/Images/forest.jpg"); 
+    /* background-image: url("../src/Images/forest.jpg");  */
+    background-color: #171c20;
     height: 100%;
-    background-position: center;
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 900px;
+    background-size: cover; */
+    height: 100vh;
 }

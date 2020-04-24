@@ -138,19 +138,16 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  background-color: #ffeee2;
+  background-color: #d7dce2;
 }
 
 .guidr{
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-style: italic;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: black;
-  padding: .2rem;
-  border-radius: 10%;
-  background-color: #d2bba0;
-  /* -webkit-box-shadow: 2.5px 1px 2.5px 1px #9f7e69; */
+  padding-top: .2rem;
 }
 
 
@@ -202,9 +199,9 @@
 
 
 
-.testingDiv{
+.trip-con{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 } 
 

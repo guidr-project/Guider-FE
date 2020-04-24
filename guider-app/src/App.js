@@ -93,13 +93,13 @@ function App() {
           }} />
 
 
-          <Route exact path='/homepage/journey' render={props => {
+          {/* <Route exact path='/homepage/journey' render={props => {
             const token = localStorage.getItem("token")
             if(!token){
               return <Redirect to='/' />;
             } else {
               return <HomePage {...props} getJourneys={getJourneys} />
-            }
+            } */}
           }} />
         </UserContext.Provider>
       </JourneyContext.Provider>

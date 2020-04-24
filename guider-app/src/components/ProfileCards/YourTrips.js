@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import UserCard from "./UserCard";
 import "../../Users.css";
+import TripCard from './TripCard.js'
 
 import { useContext } from 'react'
 import { JourneyContext } from '../../context/GuidrContext'
@@ -19,7 +20,8 @@ export const YourTrips = props => {
 
     return (
         <div className="card-container">
-            <div className='testingDiv'>
+            <TripCard/>
+            <div className='trip-con'>
 
                 {journeys.map(user => { if(user.user_id == localStorage.getItem('id')){
                         return (

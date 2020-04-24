@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {axiosAuth} from '../utils/axiosAuth';
+import { JourneyContext, UserContext } from '../../context/GuidrContext'
 
 
 
@@ -7,6 +8,11 @@ import {axiosAuth} from '../utils/axiosAuth';
 const TripCard = (props) => {
 
 //   console.log(props)
+    const {journeys} = useContext(JourneyContext)
+    const [newTrip, setNewTrip] = useState(journeys)
+    const addNewTrip = e => {
+        setNewTrip([...newTrip, e])
+    }
 
   const[newEvent, setNewEvent] = useState(
     {
@@ -35,10 +41,10 @@ const TripCard = (props) => {
       .then(res => props.history.push('/homepage/alljourneys'))
       .catch(error => console.log(error));
 
-    const addNewTrip = {
+    const addTrip = {
       ...newEvent
     };
-    props.addNewTrip(addNewTrip);
+    addNewTrip(addTrip);
     setNewEvent(    
     {
         title: "", 
@@ -120,7 +126,9 @@ const TripCard = (props) => {
                             onChange={changeHandler} 
                         />
 
-                        <button className="tripbutton" type="submit">Upload!</button>
+                        <button 
+                        className="tripbutton" 
+                        type="submit">Upload!</button>
                     </div>
                 </form>
             </div>
