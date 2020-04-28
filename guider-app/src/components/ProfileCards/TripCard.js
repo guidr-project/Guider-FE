@@ -61,47 +61,48 @@ const TripCard = (props) => {
   
     return (
         <div className="trip-container">
-            
-            <img className="mountains" img src="https://images.unsplash.com/photo-1516655855035-d5215bcb5604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            alt="snowy"/>
 
             <div className="trip-form">
                 <form onSubmit={submitForm}>
+                    <h1 style={{paddingBottom: "5px"}}>Add New Trip</h1>
                     <div className="f-name">
-                        <label>Trip Name</label>
+                        <label>Trip Name:</label>
                         <input className="trip-name"
                             type="text" 
                             name="title" 
-                            placeholder="Name of Trip" 
                             value={newEvent.title}
                             onChange={changeHandler} 
                         />
 
-                        <label>Give a description of your trip!</label> 
+                        <label>Describe your trip:</label> 
                         <textarea className="desc"
                             type="note"
                             name="description" 
                             value={newEvent.description}
                             onChange={changeHandler} 
                         />
-
-                        <label>Start Date</label> 
-                        <input className="date-name"
-                            type="date" 
-                            name="start_date" 
-                            value={newEvent.start_date}
-                            onChange={changeHandler} 
-                        />
-
-                        <label>End Date</label> 
+                        <div style={{display:"flex", justifyContent:"space-between"}}>
+                            <div style={{display:"flex", flexDirection:"column"}}>
+                            <label>Start Date:</label> 
+                            <input className="date-name"
+                                type="date" 
+                                name="start_date" 
+                                value={newEvent.start_date}
+                                onChange={changeHandler} 
+                            />
+                            </div>
+                            <div style={{display:"flex", flexDirection:"column"}}>
+                        <label>End Date:</label> 
                         <input className="date-name"
                             type="date" 
                             name="end_date"
                             value={newEvent.end_date}
                             onChange={changeHandler} 
                         />
+                        </div>
+                        </div>
 
-                        <label>Type of Trip</label> 
+                        <label>Type of Trip:</label> 
                         <input className="trip-name"
                             type="text" 
                             name="type" 
@@ -109,25 +110,26 @@ const TripCard = (props) => {
                             value={newEvent.type}
                             onChange={changeHandler} 
                         />
-
-                        <label>Number of Hours</label> 
-                        <input className="date-name"
+                         <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                        <label style={{paddingBottom: '3%'}}>Number of Hours:</label> 
+                        <input className="time-name"
                             type="number" 
                             name="duration_hours"
                             value={newEvent.duration_hours}
                             onChange={changeHandler} 
                         />
 
-                        <label>Number of Days</label> 
-                        <input className="date-name"
+                        <label style={{paddingBottom: '3%'}}>Number of Days:</label> 
+                        <input className="time-name"
                             type="number" 
                             name="duration_days"
                             value={newEvent.duration_days}
                             onChange={changeHandler} 
                         />
-
+                        </div>
                         <button 
-                        className="tripbutton" 
+                        className="ui blue button"
+                        style={{background: '#096852', color: 'white'}}
                         type="submit">Upload!</button>
                     </div>
                 </form>

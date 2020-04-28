@@ -6,4 +6,14 @@
     background-repeat: no-repeat;
     background-size: cover; */
     height: 100vh;
+    display: flex;
+}
+.card-container-all {
+    /* background-image: url("../src/Images/forest.jpg");  */
+    background-color: #171c20;
+    height: 100%;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    height: 100vh;
 }

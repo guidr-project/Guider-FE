@@ -11,11 +11,11 @@ const createLabel = (iconName, labelText) => (
   </span>
 );
 
-const welcomeLabel = createLabel("map", "Create Journey");
-const characterLabel = createLabel("compass", "Your Journeys");
+// const welcomeLabel = createLabel("map", "Create Journey");
+const characterLabel = createLabel("compass", "Your Dashboard");
 const locationLabel = createLabel("globe", "All Journeys");
 const episodeLabel = createLabel("thumbs up", "Profile");
-const logoutLabel = createLabel("thumbs up", "log Out");
+// const logoutLabel = createLabel("thumbs up", "log Out");
 
 // const logOut = () => {
 //   localStorage.clear()

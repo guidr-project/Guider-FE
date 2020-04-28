@@ -13,7 +13,7 @@ export const Users = ({getJourneys}) => {
     // console.log(journeys)
 
     return (
-        <div className="card-container">
+        <div className="card-container-all">
             <div className='trip-con' >
 
                 {journeys.map((user, index) => {
